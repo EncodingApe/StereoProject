@@ -68,6 +68,4 @@ def calibrate():
 
 if __name__ == '__main__':
     rms, camera_matrix, dist_coeffs, rvecs, tvecs = calibrate()
-    print(dist_coeffs)
-
 
