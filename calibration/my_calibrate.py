@@ -139,7 +139,6 @@ def estimate_ideal_point(obj_points, K, R, t):
 
 def estimate_radial_distortion(image_points, ideal_points, ideal_image_points, u0, v0):
     """
-
     :param image_points: distorted pixel coordinate
     :param ideal_points: undistorted pixel coordinate
     :param ideal_image_points: undistorted image coordinate
