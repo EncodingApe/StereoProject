@@ -10,7 +10,7 @@ for file in os.listdir(output_path):
     distort_im = cv2.imread(output_path + '/' + file)
     distort_im = cv2.cvtColor(distort_im, cv2.COLOR_RGB2GRAY)
 
-    h, w = distort_im.shape[:2]
+    h, w = distort_im.shape[: 2]
     new_camera_matrix, roi = cv2.getOptimalNewCameraMatrix(camera_matrix, dist_coeffs, (w, h), 1, (w, h))
 
     dst = cv2.undistort(distort_im, camera_matrix, dist_coeffs, None, new_camera_matrix)
