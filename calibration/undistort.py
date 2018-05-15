@@ -22,6 +22,7 @@ if __name__ == '__main__':
     _, camera_matrix, dist_coeffs, _, _ = calibrate.calibrate()
 
     # used the image saved in calibrate.calibrate()
+    # undistorted images would be saved in output_path.
     input_path = './output/'
     output_path = './output/'
     for file in os.listdir(input_path):
