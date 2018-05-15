@@ -30,10 +30,10 @@ def estimate_H(obj_points, img_points):
     min_vector = eig_vectors[:, min_val_index]
 
     H = np.reshape(min_vector, (3, 3))
-
-    # print(H)
-
-    return H
+    
+    # 因为单应矩阵是在齐次坐标系下的, 所以可以将任意一个尺度因子乘上它, 为了保持和OpenCV的旋转矩阵和平移矩阵同方向
+    # 将单应矩阵乘上-1
+    return -H
 
 
 def v(i, j, H):
