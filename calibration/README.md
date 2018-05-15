@@ -36,6 +36,22 @@ return parameters:
 ---
 
 ## undistort.py
+In this file, a funciton named **undistort** is implemented to undistort a distorted image with corresponding intrinsic matrix and distort coefficients with OpenCV API. In order to achieve undistortion, the camera calibration implemented in calibrate.py is called to get necessary parameters.
+
+- ***undistort(distort_im, camera_matrix, dist_coeffs) -> dst***
+This function could be used to undistort a distorted. In this function, an OpenCV function **cv2.getOptimalNewCameraMatrix()** is used to generate a new intrinsic matrix without distortion and the size of undistorted image could also be obtained to crop the image to prevent the edge of undistorted image from being black. 
+
+Then the function **cv2.undistort()** is used to undistort image with original intrinsic matrix, original distort coefficients and new intrinsic matrix. 
+
+Finally, in this function, the parameter obtained by **cv2.getOptimalNewCameraMatrix()** is used to crop the image obtained by **cv2.undistort()** and return the cropped and undistorted image.
+
+given parameters:
+  1. distort_im: The original distorted image.
+  2. camera_matrix: The intrinsic matrix.
+  3. dist_coeffs: The distortion parameters.
+  
+ return parameters:
+  1. dst: The cropped and undistorted image.
 
 
 ## my_calibrate.py
