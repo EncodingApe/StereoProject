@@ -80,34 +80,3 @@ if __name__ == '__main__':
     print("distCoeffs2 = \n{}\n".format(distCoeffs2))
     print("R = \n{}\n".format(R))
     print("T = \n{}\n".format(T))
-
-    # # R1, R2 用来表示将原来的图像旋转到修正后的图像 3*3
-    # # P1, P2 表示新的将空间点投影到修正后的图像上的投影矩阵 3*4
-    # R1, R2, P1, P2, Q, validPixROI1, validPixROI2 = cv2.stereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2,
-    #                                                                   distCoeffs2, image_size, R, T, alpha=0)
-    #
-    # # left_map1, left_map2 = cv2.initUndistortRectifyMap(cameraMatrix1, distCoeffs1, R1, P1, image_size, cv2.CV_16SC2)
-    # # right_map1, right_map2 = cv2.initUndistortRectifyMap(cameraMatrix2, distCoeffs2, R2, P2, image_size, cv2.CV_16SC2)
-    #
-    # # cv2.imshow('original-left', org_image_left)
-    # # cv2.imshow('original-right', org_image_right)
-    # #
-    # # left = cv2.remap(org_image_left, left_map1, left_map2, cv2.INTER_LINEAR)
-    # # cv2.imshow('rectified-left', left)
-    # #
-    # # right = cv2.remap(org_image_right, right_map1, right_map2, cv2.INTER_LINEAR)
-    # # cv2.imshow('rectified-right', right)
-    # # cv2.waitKey()
-    #
-    # print("The rectified profect matrix of left camera is \n{}".format(P1))
-    # print("The rectified profect matrix of right camera is \n{}".format(P2))
-    #
-    # cl = -np.mat(P1[:, :3]).I * np.mat(P1[:, 3]).T
-    # cr = -np.mat(P2[:, :3]).I * np.mat(P2[:, 3]).T
-    #
-    # print("The optical center of left camera is \n{}".format(cl))
-    # print("The optical center of right camera is \n{}".format(cr))
-    # print("So the translation matrix [b; 0; 0] is \n{}".format(cr - cl))
-    #
-    # print(np.c_[np.squeeze(cl.flatten()), [1]])
-    # print(np.dot(P2, np.c_[np.squeeze(cl.flatten()), [1]].reshape(4, 1)))
