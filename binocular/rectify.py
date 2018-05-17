@@ -5,10 +5,10 @@ import cv2
 def get_rectify_parameter(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, image_size, R, T):
     # R1, R2 用来表示将原来的图像旋转到修正后的图像 3*3
     # P1, P2 表示新的将空间点投影到修正后的图像上的投影矩阵 3*4
-    R1, R2, P1, P2, Q, validPixROI1, validPixROI2 = cv2.stereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2,
+    R1, R2, P1, P2, Q, _, _ = cv2.stereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2,
                                                                       distCoeffs2, image_size, R, T, alpha=0)
 
-    return R1, R2, P1, P2, Q, validPixROI1, validPixROI2
+    return R1, R2, P1, P2, Q
 
 
 def rectify_image(org_image, cameraMatrix, distCoeffs, R, P, image_size):
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     ret, image_size = calibrate_binocular_camera.calibrate_each_camera('./left', './right', chosen_image_to_show)
     _, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F = ret
 
-    R1, R2, P1, P2, Q, validPixROI1, validPixROI2 = \
+    R1, R2, P1, P2, Q = \
         get_rectify_parameter(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, image_size, R, T)
 
     rectified_image = rectify_image(calibrate_binocular_camera.org_image_left, cameraMatrix1, distCoeffs1, R1, P1,
