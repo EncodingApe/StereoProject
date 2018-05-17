@@ -66,13 +66,16 @@ def calibrate_each_camera(input_dir1, input_dir2, chosen_image = 1):
 
     flags = (cv2.CALIB_FIX_ASPECT_RATIO + cv2.CALIB_ZERO_TANGENT_DIST +
              cv2.CALIB_SAME_FOCAL_LENGTH)
-    return cv2.stereoCalibrate(objects_lst, image1_lst, image2_lst, None, None, None, None, image_size,
-                               flags=flags), image_size
+    
+    rms, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F = \
+        cv2.stereoCalibrate(objects_lst, image1_lst, image2_lst, None, None, None, None, image_size, flags=flags)
+    
+    return rms, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F, image_size
 
 
 if __name__ == '__main__':
-    ret, image_size = calibrate_each_camera('./left', './right')
-    _, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F = ret
+    rms, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F, image_size = \
+        calibrate_each_camera('./left', './right')
 
     print("cameraMatrix1 = \n{}\n".format(cameraMatrix1))
     print("cameraMatrix2 = \n{}\n".format(cameraMatrix2))
