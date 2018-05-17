@@ -17,12 +17,13 @@ Obtaining the 3-D points coordinates and 2-D pixel coordinates of both left-view
 Then the parameters obtained above and the image_size would be returned as the calibration results.
 
 given parameters:
-
+    
     1. input_dir1: The directory contains the left-view images.
     2. input_dir2: The directory contains the right-view images.
     3. chosen_image: The chosen_image selected to be shown to demonstrate the rectification.
 
 return parameters:
+
     1. rms: The root-mean-square error of the calibration.
     2. cameraMatrix1: The intrinsic matrix of the left camera.
     3. distCoeffs1: The distortion parameters of the left camera.
@@ -43,6 +44,7 @@ Then two functions in this files are called.
 In this function, I simply use the calibration parameters of stereo system to calculate the rectification parameters with OpenCV API. The function **cv2.stereoRectify()** is called. The calibration parameters are passed to this function and the return parameters are the rectification result.
 
 given parameters:
+
     1. cameraMatrix1: The intrinsic matrix of the left camera.
     2. distCoeffs1: The distortion coefficients of the left camera.
     3. cameraMatrix2: The intrinsic matrix of the right camera.
@@ -52,6 +54,7 @@ given parameters:
     7. T: The translation matrix between two cameras.
 
 return parameters:
+
     1. R1: The rotation matrix between the unrectified plane and rectified plane of the left camera.
     2. R2: The rotation matrix between the unrectified plane and rectified plane of the right camera.
     3. P1: The new projective matrix of the left camera.
@@ -65,6 +68,7 @@ This function, an unrectified and undistorted image could be rectified with the 
 At first, **cv2.initUndistortRectifyMap()** is called by passing the intrinsic matrix, distortion coefficients, rotation matrix between the unrectified plane and rectified plane, the rectified projective matrix and the image size as parameters of particular camera to this function. Then we could obtain two maps, which represent for the undistortion map and rectification map used in the further procedure. Then **cv2.remap()** is called to rectify the original image with the two maps get above.
 
 given parameters:
+
     1. org_image: An unrectified and undistorted image taken by particular camera.
     2. cameraMatrix1: The intrinsic matrix of particular camera.
     3. distCoeffs1: The distortion coefficients of particular camera.
@@ -73,6 +77,7 @@ given parameters:
     6. image_size: The size of unrectified.
 
 return parameters:
+
     1. The rectified image.
 
 In this file, I rectify the stereo system and show the rectification result by comparing the rectified and unrectified images taken by left camera and right camera.
