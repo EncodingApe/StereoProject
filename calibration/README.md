@@ -1,5 +1,5 @@
-# Stereo-Project
-There are three python files in this project. 
+# Camera Calibration
+There are three python files in this part. 
 
 ## calibrate.py
 This is implemented with OpenCV API. There are two functions in this file.
