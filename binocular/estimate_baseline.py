@@ -3,10 +3,10 @@ import calibrate_binocular_camera
 import numpy as np
 
 if __name__ == '__main__':
-    ret, image_size = calibrate_binocular_camera.calibrate_each_camera('./left', './right')
-    _, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F = ret
+    _, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F, image_size = \
+        calibrate_binocular_camera.calibrate_each_camera('./left', './right')
 
-    R1, R2, P1, P2, Q, validPixROI1, validPixROI2 = \
+    R1, R2, P1, P2, Q = \
         rectify.get_rectify_parameter(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, image_size, R, T)
 
     print("The rectified profect matrix of left camera is \n{}\n".format(P1))
