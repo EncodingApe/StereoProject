@@ -23,8 +23,8 @@ if __name__ == '__main__':
     # 将哪一张图片显示出来证明相机已经经过修正
     chosen_image_to_show = 10
 
-    ret, image_size = calibrate_binocular_camera.calibrate_each_camera('./left', './right', chosen_image_to_show)
-    _, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F = ret
+    _, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F, image_size = \
+        calibrate_binocular_camera.calibrate_each_camera('./left', './right', chosen_image_to_show)
 
     R1, R2, P1, P2, Q = \
         get_rectify_parameter(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, image_size, R, T)
