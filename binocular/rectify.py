@@ -35,7 +35,7 @@ if __name__ == '__main__':
     cv2.imshow('No. {} original_left'.format(chosen_image_to_show), calibrate_binocular_camera.org_image_left)
     cv2.imshow('No. {} rectified_left'.format(chosen_image_to_show), rectified_image)
 
-    rectified_image = rectify_image(calibrate_binocular_camera.org_image_right, cameraMatrix1, distCoeffs1, R1, P1,
+    rectified_image = rectify_image(calibrate_binocular_camera.org_image_right, cameraMatrix2, distCoeffs2, R2, P2,
                                     image_size)
 
     cv2.imshow('No. {} original_right'.format(chosen_image_to_show), calibrate_binocular_camera.org_image_right)
