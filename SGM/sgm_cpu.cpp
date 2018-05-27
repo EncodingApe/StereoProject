@@ -295,9 +295,9 @@ void saveDisparityMap(cv::Mat &disparityMap, int disparityRange, char* outputFil
 }
 
 int main(int argc, char** argv) {
-	char *firstFileName = "C:\\Users\\Administrator\\Desktop\\CV\\left2.png";
-	char *secondFileName = "C:\\Users\\Administrator\\Desktop\\CV\\right2.png";
-	char *outFileName = "C:\\Users\\Administrator\\Desktop\\CV\\out.png";
+	char *firstFileName = "left.png";
+	char *secondFileName = "right.png";
+	char *outFileName = "out.png";
 
 	cv::Mat firstImage;
 	cv::Mat secondImage;
@@ -314,11 +314,6 @@ int main(int argc, char** argv) {
 	unsigned short ***C; // pixel cost array W x H x D
 	unsigned short ***S; // aggregated cost array W x H x D
 	unsigned short ****A; // single path cost array 2 x W x H x D
-
-						  /*
-						  * TODO
-						  * variable LARGE_PENALTY
-						  */
 
 	clock_t begin = clock();
 
