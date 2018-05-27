@@ -535,7 +535,7 @@ void computeDisparity(unsigned short ***S, int rows, int cols, int disparityRang
 	for (int row = 0; row < rows; ++row) {
 		for (int col = 0; col < cols; ++col) {
 			minCost = MAX_SHORT;
-			// 选择S值最小的深度
+			// 脩隆脭帽S脰碌脳卯脨隆碌脛脡卯露脠
 			for (int d = disparityRange - 1; d >= 0; --d) {
 				if (minCost > S[row][col][d]) {
 					minCost = S[row][col][d];
@@ -559,9 +559,9 @@ void saveDisparityMap(cv::Mat &disparityMap, int disparityRange, char* outputFil
 
 int main(int argc, char** argv) {
 	// left image. right image. output image.
-	char *firstFileName = "C:\\Users\\Administrator\\Desktop\\CV\\left2.png";
-	char *secondFileName = "C:\\Users\\Administrator\\Desktop\\CV\\right2.png";
-	char *outFileName = "C:\\Users\\Administrator\\Desktop\\CV\\out.png";
+	char *firstFileName = "left.png";
+	char *secondFileName = "right.png";
+	char *outFileName = "out.png";
 
 	cv::Mat firstImage;
 	cv::Mat secondImage;
