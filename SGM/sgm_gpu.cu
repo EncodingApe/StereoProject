@@ -620,6 +620,17 @@ int main(int argc, char** argv) {
 
 	std::cout << "Aggregating costs..." << std::endl;
 	aggregateCosts(firstImage.rows, firstImage.cols, disparityRange, C, S);
+    
+    /*
+    used to print to file for comparision with CPU output.
+    
+    FILE *fp = fopen("gpu_output.txt", "w+");
+    for (int i=0; i<firstImage.rows; i++)
+        for(int j=0; j<firstImage.cols; j++)
+            for (int k=0; k<disparityRange; k++)
+                fprintf(fp, "%d\n", S[i][j][k]);
+    fclose(fp);
+    */
 
 	cv::Mat disparityMap = cv::Mat(cv::Size(firstImage.cols, firstImage.rows), CV_8UC1, cv::Scalar::all(0));
 
