@@ -27,3 +27,9 @@ The CPU&GPU implemention of Semi-global Matching.
 - sgm_cpu.cpp (The cpu implemention by https://github.com/reisub/SemiGlobal-Matching.)
 
 - sgm_gpu.cu (The gpu implemention.)
+
+## Stereo Matching forlder
+
+The implemention of stereo matching (i.e. the disparity computation).
+
+- calculate_disparity.py (Implemention of stereo matching and disparity map would be obtained).
