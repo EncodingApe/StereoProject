@@ -8,7 +8,7 @@ These two files implement the gaussian filtering of an image, which would be use
 
 ## sgm_cpu.cpp
 
-In this file, the cpu version of SGM is implemented by [] which use the BT algorithm to calculate the pixel cost instead of mutual imformation.
+In this file, the cpu version of SGM is implemented by https://github.com/reisub/SemiGlobal-Matching which use the BT algorithm to calculate the pixel cost instead of mutual imformation.
 
 ## sgm_gpu.cu
 
