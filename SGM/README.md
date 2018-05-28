@@ -2,7 +2,7 @@
 
 In this part, the CPU version and GPU version of SGM are implemented. Because I am a freshman on CUDA programming, the implementation of GPU version is only a beta version, which would be improved in the future.
 
-## guassion.h guassion.cpp
+## guassion.h&guassion.cpp
 
 These two files implement the gaussian filtering of an image, which would be used on an image before running the SGM algorithm.
 
