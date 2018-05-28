@@ -2,14 +2,13 @@ import cv2
 import numpy as np
 
 
-def calculate_disp(img1, img2):
+def calculate_disp(img1, img2, stereo):
     disp = stereo.compute(img1, img2).astype(np.float32) / 16.0
 
     return disp
 
 
 def init_StereoSGBM(min_disp, num_disp, window_size):
-    global stereo
     stereo = cv2.StereoSGBM_create(minDisparity=min_disp,
                                    numDisparities=num_disp,
                                    blockSize=16,
@@ -20,6 +19,8 @@ def init_StereoSGBM(min_disp, num_disp, window_size):
                                    speckleWindowSize=100,
                                    speckleRange=32
                                    )
+    
+    return stereo
 
 
 if __name__ == '__main__':
@@ -32,9 +33,9 @@ if __name__ == '__main__':
     # 表示最大的视差减去最小的视差 即视差的取值有多少个
     num_disp = 96 - min_disp
 
-    init_StereoSGBM(min_disp, num_disp, window_size)
+    stereo = init_StereoSGBM(min_disp, num_disp, window_size)
 
-    ret = calculate_disp(img1, img2)
+    ret = calculate_disp(img1, img2, stereo)
 
     cv2.imshow('left-image', img1)
     cv2.imshow('disparity-image', (ret - min_disp) / num_disp)
