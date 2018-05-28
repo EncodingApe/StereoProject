@@ -19,3 +19,9 @@ The implementation of binocular stereo calibration and the rectification of the 
 - rectify.py (The implementation of rectification of the cameras.)
 
 - estimate_baseline.py (Estimate the baseline between two rectified cameras.)
+
+## SGM folder
+
+The CPU&GPU implemention of Semi-global Matching.
+
+- 
