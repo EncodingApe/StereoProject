@@ -22,14 +22,14 @@ The implementation of binocular stereo calibration and the rectification of the 
 
 ## SGM folder
 
-The CPU&GPU implemention of Semi-global Matching.
+The CPU&GPU implementation of Semi-global Matching.
 
-- sgm_cpu.cpp (The cpu implemention by https://github.com/reisub/SemiGlobal-Matching.)
+- sgm_cpu.cpp (The cpu implementation by https://github.com/reisub/SemiGlobal-Matching.)
 
-- sgm_gpu.cu (The gpu implemention.)
+- sgm_gpu.cu (The gpu implementation.)
 
 ## Stereo Matching forlder
 
-The implemention of stereo matching (i.e. the disparity computation).
+The implementation of stereo matching (i.e. the disparity computation).
 
-- calculate_disparity.py (Implemention of stereo matching and disparity map would be obtained).
+- calculate_disparity.py (Implementation of stereo matching and disparity map would be obtained).
