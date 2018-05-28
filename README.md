@@ -24,4 +24,6 @@ The implementation of binocular stereo calibration and the rectification of the 
 
 The CPU&GPU implemention of Semi-global Matching.
 
-- 
+- sgm_cpu.cpp (The cpu implemention by https://github.com/reisub/SemiGlobal-Matching.)
+
+- sgm_gpu.cu (The gpu implemention.)
