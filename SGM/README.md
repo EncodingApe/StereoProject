@@ -22,3 +22,5 @@ This file could be called to valid the correctness of the output of CPU version 
 # ===========================================
 
 To build this project, I'm sorry to recommend you to import the necessary libraries and header files by yourselves, because I am not good at *Cmake*. :-(
+
+Paths of the left image and the right image are given directly in the .cpp and .cu files, and the disparity range is also given in these files. If you'd like to change the parameters, please rewrite in the files. And make sure the amount of parameters would not be too huge.
